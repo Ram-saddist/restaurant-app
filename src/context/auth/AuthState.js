@@ -33,7 +33,7 @@ const AuthState = props => {
           "Content-Type": "application/json"
         }
       };
-      const res = await axios.post("/api/auth/register", user, config);
+      const res = await axios.post("https://delivery-backend.onrender.com/api/auth/register", user, config);
       dispatch({
         type: REGISTER_USER,
         payload: res.data.data
@@ -56,7 +56,7 @@ const AuthState = props => {
           "Content-Type": "application/json"
         }
       };
-      const res = await axios.post("/api/auth/login", user, config);
+      const res = await axios.post("https://delivery-backend.onrender.com/api/auth/login", user, config);
       dispatch({
         type: LOGIN_USER,
         payload: res.data.data
@@ -78,7 +78,7 @@ const AuthState = props => {
     }
 
     try {
-      const res = await axios.get("/api/auth");
+      const res = await axios.get("https://delivery-backend.onrender.com/api/auth");
       dispatch({
         type: USER_LOADED,
         payload: res.data.data
